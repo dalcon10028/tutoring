@@ -1,91 +1,22 @@
 <template>
   <v-app>
-    <v-content>
-      <v-form
-        ref="form"
-        v-model="valid"
-        lazy-validation
-      >
-        <v-text-field
-          v-model="name"
-          :counter="5"
-          :rules="nameRules"
-          label="이름"
-          required
-        ></v-text-field>
-        <v-text-field
-          v-model="phone"
-          :rules="phoneRules"
-          label="핸드폰 번호"
-          required
-        ></v-text-field>
-        <v-text-field
-          v-model="id"
-          :rules="idRules"
-          label="학번"
-          required
-        ></v-text-field>
-
-        <v-btn
-          :disabled="!valid"
-          color="success"
-          class="mr-4"
-          @click="validate">
-          제출하기
-        </v-btn>
-        <v-btn
-          color="error"
-          class="mr-4"
-          @click="reset">
-          초기화
-        </v-btn>
-        <v-btn
-          color="primary"
-          class="mr-4"
-          @click="save">
-          임시저장
-        </v-btn>
-      </v-form>
-    </v-content>
+    <Nav/>
+    <FloatingBtn/>
+    <TutoringContents/>
+    <Survey/>
   </v-app>
 </template>
 
 <script>
+import Survey from '@/components/Survey'
+import Nav from '@/components/Nav'
+import FloatingBtn from '@/components/FloatingBtn'
+import TutoringContents from '@/components/TutoringContents'
 
 export default {
-  name: 'App',
-
-  data(){
-    return{
-      valid: true,
-      name : '',
-      nameRules: [
-        v => !!v || '이름을 입력해주세요',
-        v => (v && v.length <= 5) || '이름은 5자 이하입니다.',
-        v => /^[가-힣]+$/.test(v) || '정확한 이름을 입력해주세요.',
-      ],
-      phone : '',
-      phoneRules: [
-        v => !!v || '전화번호를 적어주세요',
-        v => /^\d{3}-\d{3,4}-\d{4}$/.test(v) || '유효하지 않은 번호입니다.',
-      ],
-      id : '',
-      idRules: [
-        v => !!v || '학번을 적어주세요',
-        v => (v && v.length == 9 && /[^0-9]/g.test(v)) || '유효하지 않은 학번입니다.',
-      ],
-    }
-  },
-  methods: {
-    validate () {
-      this.$refs.form.validate()
-    },
-    reset () {
-      this.$refs.form.reset()
-    },
-    save(){
-
-    }
+  name: 'app',
+  components: {
+    Nav, FloatingBtn, TutoringContents, Survey
   }
-};
+}
 </script>
