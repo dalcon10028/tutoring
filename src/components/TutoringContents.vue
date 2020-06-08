@@ -5,27 +5,31 @@
         <Home/>
       </section>
       <section id="about">
-        <h1 class="font-weight-black">동반성장 튜터링이란?</h1>
+        <About/>
       </section>
       <section id="coderunner">
-        <h1>CodeRunner 소개</h1>
+        <CodeRunner/>
       </section>
       <section id="tutor">
-        <h1>튜터 소개</h1>
+        <Tutor/>
       </section>
       <section id="survey">
-        <h1>신청서 작성</h1>
+        <Survey/>
       </section>
     </v-content>
   </v-container>
 </template>
 <script>
 import Home from '@/components/contents/Home'
+import About from '@/components/contents/About'
+import CodeRunner from '@/components/contents/CodeRunner'
+import Tutor from '@/components/contents/Tutor'
+import Survey from '@/components/contents/Survey'
 
 export default {
   name: 'TutoringContents',
   components: {
-    Home
+    Home, About, CodeRunner, Tutor, Survey
   }
 }
 

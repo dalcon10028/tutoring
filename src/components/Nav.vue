@@ -9,7 +9,7 @@
         <!-- 홈 -->
         <v-list-item link v-for="(item, idx) in menu" v-bind:key="idx" @click="MoveMenu(idx)">
           <v-list-item-content>
-            <v-list-item-title>{{item}}</v-list-item-title>
+            <v-list-item-title class="nav-item">{{item}}</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
       </v-list-item-group>
@@ -63,3 +63,8 @@
     }
   }
 </script>
+<style scoped>
+.nav-item{
+  font-family: 'Noto Sans KR';
+}
+</style>

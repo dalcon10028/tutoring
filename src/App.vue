@@ -3,12 +3,10 @@
     <Nav/>
     <FloatingBtn/>
     <TutoringContents/>
-    <Survey/>
   </v-app>
 </template>
 
 <script>
-import Survey from '@/components/Survey'
 import Nav from '@/components/Nav'
 import FloatingBtn from '@/components/FloatingBtn'
 import TutoringContents from '@/components/TutoringContents'
@@ -16,7 +14,11 @@ import TutoringContents from '@/components/TutoringContents'
 export default {
   name: 'app',
   components: {
-    Nav, FloatingBtn, TutoringContents, Survey
+    Nav, FloatingBtn, TutoringContents
   }
 }
 </script>
+
+<style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Jua&family=Nanum+Brush+Script&family=Nanum+Gothic&family=Noto+Sans+KR:wght@400;700&display=swap');
+</style>
